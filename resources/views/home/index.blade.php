@@ -3,9 +3,7 @@
 
 @section('title', 'University Webpage')
 
-@section('slider')
-    @include('home.slider')
-@endsection
+
 
 @section('content')
 
