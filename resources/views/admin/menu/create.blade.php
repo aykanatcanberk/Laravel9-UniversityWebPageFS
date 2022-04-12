@@ -28,19 +28,43 @@
 
                             <form action="/admin/menu/store" method="post">
                                 @csrf
-                                <div class="form-group-inner">
+                                <div class="form-group-inner" >
                                     <label>Title</label>
                                     <input type="text" class="form-control" name="title" placeholder="Title">
                                 </div>
 
                                 <div class="form-group-inner">
-                                    <label>Title</label>
-                                    <input type="text" class="form-control" placeholder="Title">
+                                    <label>Keywords</label>
+                                    <input type="text" class="form-control" name="keywords" placeholder="keywords">
+                                </div>
+                                <div class="form-group-inner">
+                                    <label>Description</label>
+                                    <input type="text" class="form-control" name="description" placeholder="description">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="image">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose Image File</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="">Upload</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select class="form-control" name="status">
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
                                 </div>
 
                                 <div class="login-btn-inner">
                                     <div class="inline-remember-me">
-                                        <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Log In</button>
+                                        <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Save</button>
                                         <label class="">
                                             <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> </label>
                                     </div>
