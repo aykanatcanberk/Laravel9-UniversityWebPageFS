@@ -1,16 +1,3 @@
-@extends('layouts.adminbase')
-
-@section('title','Menu List')
-@section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="logo-pro">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="header-advance-area">
     <div class="header-top-area">
         <div class="container-fluid">
@@ -28,8 +15,7 @@
                             <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                 <div class="header-top-menu tabl-d-n">
                                     <ul class="nav navbar-nav mai-top-nav">
-                                        <h1 style="color:#ffffff;">Menu List Page</h1>
-                                        <li class="nav-item"><a href="#" class="nav-link"><a href="/admin">Home</a></a> </a>
+                                        <li class="nav-item"><a href="#" class="nav-link">Home</a>
                                         </li>
                                         <li class="nav-item"><a href="#" class="nav-link">About</a>
                                         </li>
@@ -853,47 +839,3 @@
         </div>
     </div>
 </div>
-<div class="box">
-    <div class="box-header">
-        <h3 class="box-title">Menu List</h3>
-    </div><!-- /.box-header -->
-    <div class="box-body">
-        <table class="table table-bordered">
-            <tbody><tr>
-                <th style="width: 10px">Id</th>
-                <th>Title</th>
-                <th>Keywords</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Status</th>
-                <th style="width: 40px">Edit</th>
-                <th style="width: 40px">Delete</th>
-                <th style="width: 40px">Show</th>
-            </tr>
-            @foreach($data as $rs)
-            <tr>
-                <td>{{$rs->id}}</td>
-                <td>{{$rs->title}}</td>
-                <td>{{$rs->keywords}}</td>
-                <td>{{$rs->description}}</td>
-                <td>{{$rs->image}}</td>
-                <td>{{$rs->status}}</td>
-                <td><a href="admin/menu/edit/{{$rs->id}}" class="btn btn-block btn-primary btn-sm">Edit</a> </td>
-                <td><a href="admin/menu/delete/{{$rs->id}}" class="btn btn-block btn-danger btn-sm">Delete</a></td>
-                <td><a href="admin/menu/show/{{$rs->id}}" class="btn btn-block btn-success btn-sm">Show</a></td>
-            </tr>
-            @endforeach
-
-            </tbody></table>
-    </div><!-- /.box-body -->
-    <div class="box-footer clearfix">
-        <ul class="pagination pagination-sm no-margin pull-right">
-            <li><a href="#">«</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">»</a></li>
-        </ul>
-    </div>
-</div>
-@endsection
