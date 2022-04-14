@@ -855,7 +855,9 @@
 </div>
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Menu List</h3>
+        <h1 class="box-title">Menu List</h1>
+
+       <a href="/admin/menu/create" class="btn btn-block btn-primary btn-sm"> <h4 class="box-title">Add Menu</h4></a>
     </div><!-- /.box-header -->
     <div class="box-body">
         <table class="table table-bordered">
