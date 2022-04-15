@@ -61,9 +61,12 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    public function show(Menu $menu,$id)
     {
-        //
+        $data=Menu::find($id);
+        return view('admin.menu.show',[
+            'data'=>$data
+        ]);
     }
 
     /**

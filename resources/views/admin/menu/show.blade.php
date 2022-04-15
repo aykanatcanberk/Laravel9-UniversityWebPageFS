@@ -1,22 +1,27 @@
 @extends('layouts.adminbase')
 
-@section('title','Add Menu')
+@section('title','Show Menu:'.$data->title)
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="logo-pro">
                 <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                <div class="main-sparkline8-hd">
+                    <h3 style="color: #0a6aa1">Show Menu</h3>
+                </div>
             </div>
         </div>
     </div>
+
+</div>
+<div class="main-sparkline8-hd">
+
 </div>
 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
     <div class="sparkline8-list mt-b-30">
         <div class="sparkline8-hd">
-            <div class="main-sparkline8-hd">
-                <h1>Add Menu</h1>
-            </div>
+
         </div>
         <div class="sparkline8-graph">
             <div class="basic-login-form-ad">
@@ -24,52 +29,48 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="basic-login-inner">
-                            <h3>Menu Elements</h3>
+                            <a href="/admin/menu/edit/{{$data->id}}" class="btn btn-block btn-primary btn-sm"> <h4 class="box-title">Edit</h4></a>
+                            <a href="/admin/menu/destroy/{{$data->id}}" onclick="return confirm('Are you sure for deleting?')" class="btn btn-block btn-primary btn-sm"> <h4 class="box-title">Delete</h4></a>
+                        </div>
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Details</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body no-padding">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th style="width: 500px">Id</th>
+                                        <td>{{$data->id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Title</th>
+                                        <td>{{$data->title}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Keywords</th>
+                                        <td>{{$data->keywords}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Images</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td>{{$data->status}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Created Date</th>
+                                        <td>{{$data->created_at}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Updated Date</th>
+                                        <td>{{$data->updated_at}}</td>
+                                    </tr>
 
-                            <form action="/admin/menu/store" method="post">
-                                @csrf
-                                <div class="form-group-inner" >
-                                    <label>Title</label>
-                                    <input type="text" class="form-control" name="titleF" placeholder="Title">
-                                </div>
 
-                                <div class="form-group-inner">
-                                    <label>Keywords</label>
-                                    <input type="text" class="form-control" name="keywords" placeholder="keywords">
-                                </div>
-                                <div class="form-group-inner">
-                                    <label>Description</label>
-                                    <input type="text" class="form-control" name="description" placeholder="description">
-                                </div>
+                                </table>
 
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Image</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="image">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose Image File</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" id="">Upload</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Status</label>
-                                    <select class="form-control" name="status">
-                                        <option>True</option>
-                                        <option>False</option>
-                                    </select>
-                                </div>
-
-                                <div class="login-btn-inner">
-                                    <div class="inline-remember-me">
-                                        <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Save</button>
-                                        <label class="">
-                                            <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> </label>
-                                    </div>
-                                </div>
-                            </form>
+                            </div><!-- /.box-body -->
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

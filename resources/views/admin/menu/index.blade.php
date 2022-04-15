@@ -881,7 +881,7 @@
                 <td>{{$rs->image}}</td>
                 <td>{{$rs->status}}</td>
                 <td><a href="admin/menu/edit/{{$rs->id}}" class="btn btn-block btn-primary btn-sm">Edit</a> </td>
-                <td><a href="admin/menu/delete/{{$rs->id}}" class="btn btn-block btn-danger btn-sm">Delete</a></td>
+                <td><a href="admin/menu/destroy/{{$rs->id}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Are you sure for deleting?')">Delete</a></td>
                 <td><a href="admin/menu/show/{{$rs->id}}" class="btn btn-block btn-success btn-sm">Show</a></td>
             </tr>
             @endforeach
