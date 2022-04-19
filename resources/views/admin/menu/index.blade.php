@@ -422,6 +422,7 @@
                                                                                     <div class="progress progress-mini">
                                                                                         <div style="width: 38%;" class="progress-bar progress-bar-danger hd-tp-4"></div>
                                                                                     </div>
+
                                                                                     <p>Project end: 4:00 pm - 12.06.2014</p>
                                                                                 </div>
                                                                             </div>
@@ -833,7 +834,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcome-heading">
                                     <form role="search" class="sr-input-func">
-                                        <input type="text" placeholder="Search..." class="search-int form-control">
+                                        <   input type="text" placeholder="Search..." class="search-int form-control">
                                         <a href="#"><i class="fa fa-search"></i></a>
                                     </form>
                                 </div>
@@ -857,7 +858,7 @@
     <div class="box-header">
         <h1 class="box-title">Menu List</h1>
 
-       <a href="/admin/menu/create" class="btn btn-block btn-primary btn-sm"> <h4 class="box-title">Add Menu</h4></a>
+       <a href="{{route('admin.menu.create')}}" class="btn btn-block btn-primary btn-sm"> <h4 class="box-title">Add Menu</h4></a>
     </div><!-- /.box-header -->
     <div class="box-body">
         <table class="table table-bordered">
@@ -880,9 +881,9 @@
                 <td>{{$rs->description}}</td>
                 <td>{{$rs->image}}</td>
                 <td>{{$rs->status}}</td>
-                <td><a href="admin/menu/edit/{{$rs->id}}" class="btn btn-block btn-primary btn-sm">Edit</a> </td>
-                <td><a href="admin/menu/destroy/{{$rs->id}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Are you sure for deleting?')">Delete</a></td>
-                <td><a href="admin/menu/show/{{$rs->id}}" class="btn btn-block btn-success btn-sm">Show</a></td>
+                <td><a href="{{route('admin.menu.edit',['id'=>$rs->id])}}" class="btn btn-block btn-primary btn-sm">Edit</a> </td>
+                <td><a href="{{route('admin.menu.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Are you sure for deleting?')">Delete</a></td>
+                <td><a href="{{route('admin.menu.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Show</a></td>
             </tr>
             @endforeach
 

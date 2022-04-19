@@ -64,7 +64,7 @@
     <script src="/assets/admin/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<div>
+
 @include('admin.header')
 @section('sidebar')
 @include("admin.sidebar")

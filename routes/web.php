@@ -44,16 +44,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //***Admin panel routes
-Route::get('/admin',[AdminHomeController::class,'index'])->name('admin');
-
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminHomeController::class, 'index'])->name('index');
 //***Admin Menu routes
-Route::get('/admin/menu',[AdminMenuController::class,'index'])->name('admin_menu');
-Route::get('/admin/menu/create',[AdminMenuController::class,'create'])->name('admin_menu_create');
-Route::post('/admin/menu/store',[AdminMenuController::class,'store'])->name('admin_menu_store');
-Route::get('/admin/menu/edit/{id}',[AdminMenuController::class,'edit'])->name('admin_menu_edit');
-Route::post('/admin/menu/update/{id}',[AdminMenuController::class,'update'])->name('admin_menu_update');
-Route::get('/admin/menu/show/{id}',[AdminMenuController::class,'show'])->name('admin_menu_show');
-
+    Route::prefix('/menu')->name('menu.')->controller(AdminMenuController::class)->group(function () {
+    Route::get('/',  'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::post('/update/{id}', 'update')->name('update');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::get('/destroy/{id}','destroy')->name('destroy');
+     });
+});
 
 
 
