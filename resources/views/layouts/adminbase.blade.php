@@ -1,142 +1,82 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <!-- basic -->
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.2 | Kiaalap - Kiaalap Admin Template</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/owl.carousel.css">
-    <link rel="stylesheet" href="/assets/admin/css/owl.theme.css">
-    <link rel="stylesheet" href="/assets/admin/css/owl.transitions.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/animate.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/normalize.css">
-    <!-- meanmenu icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/meanmenu.min.css">
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/main.css">
-    <!-- educate icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/educate-custon-icon.css">
-    <!-- morrisjs CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/morrisjs/morris.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- metisMenu CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="/assets/admin/css/metisMenu/metisMenu-vertical.css">
-    <!-- calendar CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="/assets/admin/css/calendar/fullcalendar.print.min.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/style.css">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="/assets/admin/css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="/assets/admin/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- site icon -->
+    <link rel="icon" href="{{asset('assets')}}/admin2/images/fevicon.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/custom.css" />
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <![endif]-->
 </head>
 
+<body class="dashboard dashboard_1">
+<div class="full_container">
+    <div class="inner_container">
 
-@include('admin.header')
-@section('sidebar')
-@include("admin.sidebar")
-@show
-<div class="all-content-wrapper">
+        @section('sidebar')
+            @include("admin.sidebar")
+        @show
+        <div id="content">
+            @include('admin.header')
+            <div class="midde_cont">
+            @yield('content')
 
-@yield('content')
 
-
-<@include("admin.footer")
-@yield('foot')
+            @include("admin.footer")
+            @yield('foot')
+            </div>
+        </div>
+    </div>
 </div>
-
-<script src="/assets/admin/js/vendor/jquery-1.12.4.min.js"></script>
-<!-- bootstrap JS
-    ============================================ -->
-<script src="/assets/admin/js/bootstrap.min.js"></script>
-<!-- wow JS
-    ============================================ -->
-<script src="/assets/admin/js/wow.min.js"></script>
-<!-- price-slider JS
-    ============================================ -->
-<script src="/assets/admin/js/jquery-price-slider.js"></script>
-<!-- meanmenu JS
-    ============================================ -->
-<script src="/assets/admin/js/jquery.meanmenu.js"></script>
-<!-- owl.carousel JS
-    ============================================ -->
-<script src="/assets/admin/js/owl.carousel.min.js"></script>
-<!-- sticky JS
-    ============================================ -->
-<script src="/assets/admin/js/jquery.sticky.js"></script>
-<!-- scrollUp JS
-    ============================================ -->
-<script src="/assets/admin/js/jquery.scrollUp.min.js"></script>
-<!-- counterup JS
-    ============================================ -->
-<script src="/assets/admin/js/counterup/jquery.counterup.min.js"></script>
-<script src="/assets/admin/js/counterup/waypoints.min.js"></script>
-<script src="/assets/admin/js/counterup/counterup-active.js"></script>
-<!-- mCustomScrollbar JS
-    ============================================ -->
-<script src="/assets/admin/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="/assets/admin/js/scrollbar/mCustomScrollbar-active.js"></script>
-<!-- metisMenu JS
-    ============================================ -->
-<script src="/assets/admin/js/metisMenu/metisMenu.min.js"></script>
-<script src="/assets/admin/js/metisMenu/metisMenu-active.js"></script>
-<!-- morrisjs JS
-    ============================================ -->
-<script src="/assets/admin/js/morrisjs/raphael-min.js"></script>
-<script src="/assets/admin/js/morrisjs/morris.js"></script>
-<script src="/assets/admin/js/morrisjs/morris-active.js"></script>
-<!-- morrisjs JS
-    ============================================ -->
-<script src="/assets/admin/js/sparkline/jquery.sparkline.min.js"></script>
-<script src="/assets/admin/js/sparkline/jquery.charts-sparkline.js"></script>
-<script src="/assets/admin/js/sparkline/sparkline-active.js"></script>
-<!-- calendar JS
-    ============================================ -->
-<script src="/assets/admin/js/calendar/moment.min.js"></script>
-<script src="/assets/admin/js/calendar/fullcalendar.min.js"></script>
-<script src="/assets/admin/js/calendar/fullcalendar-active.js"></script>
-<!-- plugins JS
-    ============================================ -->
-<script src="/assets/admin/js/plugins.js"></script>
-<!-- main JS
-    ============================================ -->
-<script src="/assets/admin/js/main.js"></script>
-<!-- tawk chat JS
-    ============================================ -->
-<script src="/assets/admin/js/tawk-chat.js"></script>
+<script src="{{asset('assets')}}/admin2/js/jquery.min.js"></script>
+<script src="{{asset('assets')}}/admin2/js/popper.min.js"></script>
+<script src="{{asset('assets')}}/admin2/js/bootstrap.min.js"></script>
+<!-- wow animation -->
+<script src="{{asset('assets')}}/admin2/js/animate.js"></script>
+<!-- select country -->
+<script src="{{asset('assets')}}/admin2/js/bootstrap-select.js"></script>
+<!-- owl carousel -->
+<script src="{{asset('assets')}}/admin2/js/owl.carousel.js"></script>
+<!-- chart js -->
+<script src="{{asset('assets')}}/admin2/js/Chart.min.js"></script>
+<script src="{{asset('assets')}}/admin2/js/Chart.bundle.min.js"></script>
+<script src="{{asset('assets')}}/admin2/js/utils.js"></script>
+<script src="{{asset('assets')}}/admin2/js/analyser.js"></script>
+<!-- nice scrollbar -->
+<script src="{{asset('assets')}}/admin2/js/perfect-scrollbar.min.js"></script>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script>
+    var ps = new PerfectScrollbar('#sidebar');
+</script>
+<!-- custom js -->
+<script src="{{asset('assets')}}/admin2/js/custom.js"></script>
+<script src="{{asset('assets')}}/admin2/js/chart_custom_style1.js"></script>
 </body>
 </html>
 

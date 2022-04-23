@@ -1,11 +1,9 @@
-<div class="footer-copyright-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer-copy-right">
-                    <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
-                </div>
-            </div>
-        </div>
+
+
+<div class="container-fluid">
+    <div class="footer">
+        <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+            Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+        </p>
     </div>
 </div>

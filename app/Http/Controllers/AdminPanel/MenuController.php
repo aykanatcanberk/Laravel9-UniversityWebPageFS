@@ -17,10 +17,10 @@ class MenuController extends Controller
     public function index()
     {
         //
-        $data=Menu::all();
-       return view('admin.menu.index',[
-           'data'=>$data
-       ]);
+        $data = Menu::all();
+        return view('admin.menu.index', [
+            'data' => $data
+        ]);
 
     }
 
@@ -39,19 +39,18 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
-        $data=new Menu();
-        $data->parent_id =0;
+        $data = new Menu();
+        $data->parent_id = 0;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
-        $data->description= $request->description;
+        $data->description = $request->description;
         $data->status = $request->status;
-        $data->title = $request->title;
         $data->save();
         return redirect('admin/menu');
     }
@@ -59,45 +58,45 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param \App\Models\Menu $menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu,$id)
+    public function show(Menu $menu, $id)
     {
-        $data=Menu::find($id);
-        return view('admin.menu.show',[
-            'data'=>$data
+        $data = Menu::find($id);
+        return view('admin.menu.show', [
+            'data' => $data
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param \App\Models\Menu $menu
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu,$id)
+    public function edit(Menu $menu, $id)
     {
-        $data=Menu::find($id);
-        return view('admin.menu.edit',[
-            'data'=>$data
+        $data = Menu::find($id);
+        return view('admin.menu.edit', [
+            'data' => $data
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Menu  $menu
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Menu $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menu,$id)
+    public function update(Request $request, Menu $menu, $id)
     {
-        $data=Menu::find($id);
-        $data->parent_id =0;
+        $data = Menu::find($id);
+        $data->parent_id = 0;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
-        $data->description= $request->description;
+        $data->description = $request->description;
         $data->status = $request->status;
         $data->title = $request->title;
         $data->save();
@@ -107,12 +106,12 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Menu  $menu
+     * @param \App\Models\Menu $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu,$id)
+    public function destroy(Menu $menu, $id)
     {
-        $menu=Menu::find($id);
+        $menu = Menu::find($id);
 
         $menu->delete();
         return redirect('admin/menu');

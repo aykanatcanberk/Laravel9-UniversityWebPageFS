@@ -28,16 +28,16 @@ Route::get('/welcome', function () {
 });
 
 // 3-call controller Function
-Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //4- Route controller view
-Route::get('/test',[HomeController::class,'test'])->name('test');
+Route::get('/test', [HomeController::class, 'test'])->name('test');
 
 //5-route with parameter
-Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param');
+Route::get('/param/{id}/{number}', [HomeController::class, 'param'])->name('param');
 
 //6 -Route with post
-Route::post('/save',[HomeController::class,'save'])->name('save');
+Route::post('/save', [HomeController::class, 'save'])->name('save');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -48,14 +48,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
 //***Admin Menu routes
     Route::prefix('/menu')->name('menu.')->controller(AdminMenuController::class)->group(function () {
-    Route::get('/',  'index')->name('index');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/store', 'store')->name('store');
-    Route::get('/edit/{id}', 'edit')->name('edit');
-    Route::post('/update/{id}', 'update')->name('update');
-    Route::get('/show/{id}', 'show')->name('show');
-    Route::get('/destroy/{id}','destroy')->name('destroy');
-     });
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+    });
 });
 
 
