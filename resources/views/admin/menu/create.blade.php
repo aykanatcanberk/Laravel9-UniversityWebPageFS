@@ -27,7 +27,7 @@
 
                 <div class="content-wrapper">
                     <section class="content">
-                        <form action="/admin/menu/store" method="post">
+                        <form action="/admin/menu/store" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group-inner">
                                 <label>Title</label>

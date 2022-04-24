@@ -51,6 +51,11 @@ class MenuController extends Controller
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
+        if($request->file('image')){
+
+            $data->image=$request->file('image')->store('images');
+
+        }
         $data->save();
         return redirect('admin/menu');
     }
@@ -98,6 +103,11 @@ class MenuController extends Controller
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
+        if($request->file('image')){
+
+            $data->image=$request->file('image')->store('images');
+
+        }
         $data->title = $request->title;
         $data->save();
         return redirect('admin/menu');
@@ -111,9 +121,10 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu, $id)
     {
-        $menu = Menu::find($id);
+        $data = Menu::find($id);
+        Storage::delete($data->image);
 
-        $menu->delete();
+        $data->delete();
         return redirect('admin/menu');
 
     }

@@ -27,7 +27,7 @@
 
         <div class="content-wrapper">
             <section class="content">
-                <form action="/admin/menu/update/{{$data->id}}" method="post">
+                <form action="/admin/menu/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group-inner" >
                         <label>Title</label>
@@ -50,9 +50,7 @@
                                 <input type="file" class="custom-file-input" name="image">
                                 <label class="custom-file-label" for="exampleInputFile">Choose Image File</label>
                             </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="">Upload</span>
-                            </div>
+
                         </div>
                     </div>
                     <div class="form-group">
