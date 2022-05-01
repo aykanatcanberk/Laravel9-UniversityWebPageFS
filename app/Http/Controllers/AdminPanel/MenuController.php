@@ -146,10 +146,10 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu, $id)
     {
-        $data = Menu::find($id);
-        Storage::delete($data->image);
+        $menu = Menu::find($id);
+        Storage::delete($menu->image);
 
-        $data->delete();
+        $menu->delete();
         return redirect('admin/menu');
 
     }

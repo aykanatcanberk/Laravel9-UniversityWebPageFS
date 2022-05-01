@@ -29,6 +29,7 @@
                     <section class="content">
                         <form action="/admin/menu/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                             @csrf
+
                             <div class="form-group-inner">
                                 <label>Parent Menu</label>
                                 <select class="form-control select2" name="parent_id">
@@ -97,4 +98,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

@@ -28,9 +28,8 @@
                 <div class="content-wrapper">
                     <section class="content">
                         <form action="/admin/menu/store" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="card-body">
-                                @csrf
-
                                 <div class="form-group-inner">
                                     <label>Parent Menu</label>
                                     <select class="form-control select2" name="parent_id">
@@ -41,6 +40,7 @@
                                         @endforeach
                                     </select>
                                 </div>
+
 
                                 <div class="form-group-inner">
                                     <label>Title</label>
@@ -93,7 +93,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </form>
                     </section>
                 </div>
