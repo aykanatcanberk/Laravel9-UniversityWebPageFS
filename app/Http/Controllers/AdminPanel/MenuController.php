@@ -50,8 +50,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-
         $data = Menu::all();
+
         return view('admin.menu.create', [
             'data' => $data
         ]);
@@ -147,8 +147,8 @@ class MenuController extends Controller
     public function destroy(Menu $menu, $id)
     {
         $menu = Menu::find($id);
-        Storage::delete($menu->image);
-
+        if ($menu -> image)
+            Storage::delete($menu->image);
         $menu->delete();
         return redirect('admin/menu');
 
