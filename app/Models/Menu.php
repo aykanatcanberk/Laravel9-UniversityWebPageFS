@@ -9,4 +9,10 @@ class Menu extends Model
 {
     //kategori yerine projede menü kullandım***
     use HasFactory;
+    #one To One
+    public function contents()
+    {
+
+        return $this->hasOne(Content::class);
+    }
 }
