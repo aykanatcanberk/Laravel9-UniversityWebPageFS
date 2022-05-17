@@ -69,7 +69,7 @@ class AdminContentController extends Controller
     {
         //
         $data = new Content();
-        $data->content_id = $request->content_id;
+        $data->menu_id = $request->menu_id;
         $data->user_id =0; // $request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
@@ -133,7 +133,7 @@ class AdminContentController extends Controller
     public function update(Request $request, Content $content, $id)
     {
         $data = Content::find($id);
-        $data->content_id = $request->content_id;
+        $data->menu_id = $request->menu_id;
         $data->user_id =0; // $request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;

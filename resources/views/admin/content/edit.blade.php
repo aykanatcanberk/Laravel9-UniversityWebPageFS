@@ -1,13 +1,13 @@
 @extends('layouts.adminbase')
 
-@section('title','Edit Menu:'.$data->title)
+@section('title','Edit Content:'.$data->title)
 @section('content')
     <div class="midde_cont">
         <div class="container-fluid">
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h1>Edit Menu</h1>
+                        <h1>Edit Content</h1>
                     </div>
                 </div>
             </div>
@@ -27,17 +27,16 @@
 
                 <div class="content-wrapper">
                     <section class="content">
-                        <form action="/admin/menu/update/{{$data->id}}" method="post" enctype="multipart/form-data">
+                        <form action="/admin/content/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group-inner">
                                 <label>Parent Menu</label>
-                                <select class="form-control select2" name="parent_id">
-                                     <option value="0" selected="selected">Main Menu</option>
+                                <select class="form-control select2" name="menu_id">
                                     @foreach($datalist as $rs)
                                         <option
                                             value="{{$rs->id}}"
-                                            @if($rs->id==$data->parent_id) selected="selected" @endif >{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title) }}</option>
+                                            @if($rs->id==$data->menu_id) selected="selected" @endif >{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -56,6 +55,26 @@
                                 <label>Description</label>
                                 <input type="text" class="form-control" name="description"
                                        value="{{$data->description}}">
+                            </div>
+
+                            <div class="form-group-inner">
+                                <label>Description</label>
+                                <textarea class="form-control" name="detail" value="{{$data->description}}">
+
+                                    </textarea>
+                            </div>
+
+                            <div class="form-group-inner">
+                                <label>Content</label>
+                                <input type="text" class="form-control" name="Content" value="{{$data->content}}">
+                            </div>
+                            <div class="form-group-inner">
+                                <label>News</label>
+                                <input type="text" class="form-control" name="news" value="{{$data->news}}">
+                            </div>
+                            <div class="form-group-inner">
+                                <label>Announce</label>
+                                <input type="text" class="form-control" name="announce" value="{{$data->announce}}" >
                             </div>
 
                             <div class="form-group">
