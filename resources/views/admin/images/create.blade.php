@@ -1,46 +1,67 @@
 @extends('layouts.adminbase')
 
-@section('title','Edit Content:'.$data->title)
-
-@section('head')
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-@endsection
+@section('title','Add Menu')
 @section('content')
     <div class="midde_cont">
         <div class="container-fluid">
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h1>Edit Content</h1>
+                        <h1>{{$data->title}}</h1>
+                        <form action="{{route('admin.image.store',['cid'=>$data->id])}}" method="post"
+                              enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group-inner">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="title" placeholder="Title">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputFile">Image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image">
+                                        <label class="custom-file-label" for="exampleInputFile">Choose Image
+                                            File</label>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn-bg-cl-digg-tw">Save</button>
+
+                                    </div>
+                                </div>
+                            </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
-        <div class="container-fluid">
-            <div class="section">
-                <div class="container-fluid">
-                    <div class="row column_title">
-                        <div class="col-md-12">
-                            <div class="page_title">
-                                <h5>Edit {{$data->title}}</h5>
-                            </div>
+    <div class="container-fluid">
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row column_title">
+                    <div class="col-md-12">
+                        <div class="page_title">
+                            <h5>Menu</h5>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="content-wrapper">
-                    <section class="content">
-                        <form action="/admin/content/update/{{$data->id}}" method="post" enctype="multipart/form-data">
-                            @csrf
-
+            <div class="content-wrapper">
+                <section class="content">
+                    <form action="/admin/menu/store" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
                             <div class="form-group-inner">
                                 <label>Parent Menu</label>
-                                <select class="form-control select2" name="menu_id">
-                                    @foreach($datalist as $rs)
+                                <select class="form-control select2" name="parent_id">
+                                    <option value="0" selected="selected">Main Menu</option>
+                                    @foreach($data as $rs)
                                         <option
-                                            value="{{$rs->id}}"
-                                            @if($rs->id==$data->menu_id) selected="selected" @endif >{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title) }}</option>
+                                            value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -48,37 +69,17 @@
 
                             <div class="form-group-inner">
                                 <label>Title</label>
-                                <input type="text" class="form-control" name="title" value="{{$data->title}}">
+                                <input type="text" class="form-control" name="title" placeholder="Title">
                             </div>
 
                             <div class="form-group-inner">
                                 <label>Keywords</label>
-                                <input type="text" class="form-control" name="keywords" value="{{$data->keywords}}">
+                                <input type="text" class="form-control" name="keywords" placeholder="keywords">
                             </div>
                             <div class="form-group-inner">
                                 <label>Description</label>
                                 <input type="text" class="form-control" name="description"
-                                       value="{{$data->description}}">
-                            </div>
-
-                            <div class="form-group-inner">
-                                <label>Detail</label>
-                                <textarea class="form-control" name="detail" value="{!!$data->detail !!}">
-
-                                    </textarea>
-                            </div>
-
-                            <div class="form-group-inner">
-                                <label>Content</label>
-                                <input type="text" class="form-control" name="Content" value="{{$data->content}}">
-                            </div>
-                            <div class="form-group-inner">
-                                <label>News</label>
-                                <input type="text" class="form-control" name="news" value="{{$data->news}}">
-                            </div>
-                            <div class="form-group-inner">
-                                <label>Announce</label>
-                                <input type="text" class="form-control" name="announce" value="{{$data->announce}}" >
+                                       placeholder="description">
                             </div>
 
                             <div class="form-group">
@@ -95,7 +96,6 @@
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control" name="status">
-                                    <option selected>{{$data->status}}</option>
                                     <option>True</option>
                                     <option>False</option>
                                 </select>
@@ -103,8 +103,9 @@
 
                             <div class="login-btn-inner">
                                 <div class="inline-remember-me">
-                                    <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">
-                                        Update
+                                    <button class="btn btn-sm btn-primary pull-right login-submit-cs"
+                                            type="submit">
+                                        Save
                                     </button>
                                     <label class="">
                                         <div class="icheckbox_square-green" style="position: relative;"><input
@@ -116,18 +117,11 @@
                                     </label>
                                 </div>
                             </div>
-                        </form>
-                    </section>
-                </div>
+                        </div>
+                    </form>
+                </section>
             </div>
         </div>
     </div>
-@endsection
-@section('foot')
-    <script>
-
-        $(function(){
-            $('.textarea').summernote()
-            } )
-    </script>
+    </div>
 @endsection

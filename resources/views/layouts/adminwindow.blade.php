@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,43 +14,43 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- site icon -->
-    <link rel="icon" href="{{asset('assets')}}/admin2/images/fevicon.png" type="image/png"/>
+    <link rel="icon" href="{{asset('assets')}}/admin2/images/fevicon.png" type="image/png" />
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/bootstrap.min.css" />
     <!-- site css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/style.css" />
     <!-- responsive css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/responsive.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/responsive.css" />
     <!-- color css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/colors.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/colors.css" />
     <!-- select bootstrap -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/bootstrap-select.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/bootstrap-select.css" />
     <!-- scrollbar css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/perfect-scrollbar.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/perfect-scrollbar.css" />
     <!-- custom css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/custom.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin2/css/custom.css" />
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 
     <![endif]-->
-    @yield("head")
 </head>
+@extends('layouts.adminwindow')
 
+@section('title','Content Image List')
+@section('content')
 <body class="dashboard dashboard_1">
 <div class="full_container">
     <div class="inner_container">
 
-        @section('sidebar')
-            @include("admin.sidebar")
-        @show
+
         <div id="content">
             @include('admin.header')
             <div class="midde_cont">
-                @yield('content')
+            @yield('content')
 
 
-                @include("admin.footer")
-                @yield('foot')
+            @yield('foot')
+
             </div>
         </div>
     </div>
@@ -80,4 +81,5 @@
 <script src="{{asset('assets')}}/admin2/js/chart_custom_style1.js"></script>
 </body>
 </html>
+@endsection
 

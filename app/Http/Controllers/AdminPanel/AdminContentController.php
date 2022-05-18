@@ -10,20 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminContentController extends Controller
 {
-    protected $appends=[
-        'getParentsTree'
-    ];
-    public static function getParentsTree($content,$title)
-    {
-        if($content->parent_id==0)
-        {
-            return $title;
-        }
-        $parent=Content::find($content->parent_id);
-        $title=$parent->title.'>'.$title;
-        return MenuController::getParentsTree($parent,$title);
-    }
-
 
 
 

@@ -1,26 +1,26 @@
 @extends('layouts.adminbase')
 
-@section('title','Show Content:'.$data->title)
+@section('title','Show Menu:'.$data->title)
 @section('content')
     <div class="midde_cont">
         <div class="container-fluid">
             <div class="row column_title">
                 <div class="col-md-12">
                     <div class="page_title">
-                        <h2>Show Content</h2>
+                        <h2>Show Menu</h2>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <a href="/admin/content/edit/{{$data->id}}" class="btn cur-p btn-primary">
-                <button type="button" class="btn cur-p btn-primary" style="width: 150px ">Edit</button>
+            <a href="/admin/menu/edit/{{$data->id}}" class="btn cur-p btn-primary">
+                <button type="button" class="btn cur-p btn-primary" style="width: 150px " >Edit</button>
             </a>
         </div>
 
         <div class="col-sm-3">
 
-            <a href="/admin/content/destroy/{{$data->id}}"
+            <a href="/admin/menu/destroy/{{$data->id}}"
                onclick="return confirm('Are you sure for deleting?')">
                 <button type="button" class="btn cur-p btn-danger" style="width: 170px">Delete</button>
             </a>
@@ -41,13 +41,8 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Menu</th>
                                     <th>Title</th>
                                     <th>Keywords</th>
-                                    <th>Detail</th>
-                                    <th>Content</th>
-                                    <th>News</th>
-                                    <th>Announce</th>
                                     <th>Images</th>
                                     <th>Status</th>
                                     <th>Created Date</th>
@@ -57,16 +52,9 @@
                                 <tbody>
                                 <tr>
                                     <td>{{$data->id}}</td>
-                                    <td>{{$data->menu}}</td>
                                     <td>{{$data->title}}</td>
                                     <td>{{$data->keywords}}</td>
-                                    <td>{!!$data->detail !!}</td>
-                                    <td>{{$data->content}}</td>
-                                    <td>{{$data->news}}</td>
-                                    <td>{{$data->announce}}</td>
-                                    <td>    @if($data->image)
-                                            <img src="{{Storage::url($data->image)}}" style="height: 40px">
-                                        @endif</td>
+                                    <td>{{$data->images}}</td>
                                     <td>{{$data->status}}</td>
                                     <td>{{$data->created_at}}</td>
                                     <td>{{$data->updated_at}}</td>
