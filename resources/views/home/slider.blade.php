@@ -5,20 +5,27 @@
                 <!-- Start super slider -->
                 <div id="slides">
                     <ul class="slides-container">
+                        @foreach($sliderdata as $rs)
                         <li>
-                            <img src="/assets/img/slider/2.jpg" alt="img">
-                            <div class="slider_caption">
-                                <h2>Largest & Beautiful University</h2>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                                <a class="slider_btn" href="#">Know More</a>
-                            </div>
+                                <img src="{{Storage::url($rs->image)}}/img/slider/2.jpg" alt="img" style="width:1024px; height: 683px">
+                                <div class="slider_caption">
+                                    <h2>{{$rs->title}}</h2>
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout.</p>
+                                    <a class="slider_btn" href="#">Know More</a>
+                                </div>
                         </li>
+                    @endforeach
                         <!-- Start single slider-->
                         <li>
                             <img src="/assets/img/slider/3.jpg" alt="img">
                             <div class="slider_caption slider_right_caption">
                                 <h2>Better Education Environment</h2>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of a page when looking at its layout.The point of using Lorem Ipsum is that
+                                    it has a more-or-less normal distribution of letters.Many desktop publishing
+                                    packages and web page editors now use Lorem Ipsum as their default model text, and a
+                                    search</p>
                                 <a class="slider_btn" href="#">Know More</a>
                             </div>
                         </li>
@@ -27,7 +34,11 @@
                             <img src="/assets/img/slider/4.jpg" alt="img">
                             <div class="slider_caption">
                                 <h2>Find out you in better way</h2>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of a page when looking at its layout.The point of using Lorem Ipsum is that
+                                    it has a more-or-less normal distribution of letters.Many desktop publishing
+                                    packages and web page editors now use Lorem Ipsum as their default model text, and a
+                                    search</p>
                                 <a class="slider_btn" href="#">Know More</a>
                             </div>
                         </li>
