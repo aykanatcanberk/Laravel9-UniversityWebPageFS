@@ -48,6 +48,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //***Admin panel routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+
+    //***General routes ROUTES
+Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
+    Route::post('/setting', [AdminHomeController::class, 'settingUpdate'])->name('setting.update');
+
+
+
 //***Admin Menu routes
     Route::prefix('/menu')->name('menu.')->controller(AdminMenuController::class)->group(function () {
         Route::get('/', 'index')->name('index');

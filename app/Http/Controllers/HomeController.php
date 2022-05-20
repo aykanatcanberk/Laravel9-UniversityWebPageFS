@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,8 +12,11 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata=Content::limit(4)->get();
+        $setting=Setting::first();
         return view('home.index',
-            ['sliderdata'=>$sliderdata
+            [
+                'setting'=>$setting,
+                'sliderdata'=>$sliderdata
             ]);
     }
     public function test()
