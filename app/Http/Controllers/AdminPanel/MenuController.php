@@ -75,7 +75,7 @@ class MenuController extends Controller
         $data->status = $request->status;
         if($request->file('image')){
 
-            $data->image=$request->file('image')->store('images');
+            $data->image=$request->file('image')->store('image');
 
         }
         $data->save();
@@ -130,10 +130,9 @@ class MenuController extends Controller
         $data->status = $request->status;
         if($request->file('image')){
 
-            $data->image=$request->file('image')->store('images');
+            $data->image=$request->file('image')->store('image');
 
         }
-        $data->title = $request->title;
         $data->save();
         return redirect('admin/menu');
     }
@@ -146,10 +145,12 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu, $id)
     {
-        $menu = Menu::find($id);
-        if ($menu -> image)
-            Storage::delete($menu->image);
-        $menu->delete();
+        $data = Menu::find($id);
+        if ($data->image && Storage::disk('public')->exists('$data->image'))
+        {
+            Storage::delete($data->image);
+        }
+        $data->delete();
         return redirect('admin/menu');
 
     }

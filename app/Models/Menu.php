@@ -11,7 +11,6 @@ class Menu extends Model
     #one To One
     public function contents()
     {
-
         return $this->hasOne(Content::class);
     }
     public function parent(){

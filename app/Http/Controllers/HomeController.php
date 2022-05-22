@@ -19,6 +19,38 @@ class HomeController extends Controller
                 'sliderdata'=>$sliderdata
             ]);
     }
+    public function about()
+    {
+
+        $setting=Setting::first();
+        return view('home.about',
+            [
+                'setting'=>$setting,
+            ]);
+    }
+
+    public function references()
+    {
+
+        $setting=Setting::first();
+        return view('home.index',
+            [
+                'setting'=>$setting,
+            ]);
+    }
+
+    public function contact()
+    {
+
+        $setting=Setting::first();
+        return view('home.about',
+            [
+                'setting'=>$setting,
+            ]);
+    }
+
+
+
     public function test()
     {
         return view('home.test');

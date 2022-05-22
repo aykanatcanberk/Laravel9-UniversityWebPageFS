@@ -43,7 +43,7 @@
                             @foreach($data as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
-                                    <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title)}}</td>
+                                    <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs->menu,$rs->menu->title)}}</td>
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->menu}}</td>
                                     <td>{{$rs->news}}</td>

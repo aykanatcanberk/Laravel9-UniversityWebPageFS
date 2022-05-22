@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Storage;
 class AdminContentController extends Controller
 {
 
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -70,7 +66,7 @@ class AdminContentController extends Controller
 
         if($request->file('image')){
 
-            $data->image=$request->file('image')->store('images');
+            $data->image=$request->file('image')->store('image');
 
         }
         $data->save();
@@ -135,10 +131,9 @@ class AdminContentController extends Controller
 
         if($request->file('image')){
 
-            $data->image=$request->file('image')->store('images');
+            $data->image=$request->file('image')->store('image');
 
         }
-        $data->title = $request->title;
         $data->save();
         return redirect('admin/content');
 
@@ -152,10 +147,12 @@ class AdminContentController extends Controller
      */
     public function destroy(Content $content, $id)
     {
-        $content = Content::find($id);
-        if ($content -> image)
-            Storage::delete($content->image);
-        $content->delete();
+        $data = Content::find($id);
+        if ($data->image && Storage::disk('public')->exists('$data->image'))
+        {
+            Storage::delete($data->image);
+        }
+        $data->delete();
         return redirect('admin/content');
 
     }

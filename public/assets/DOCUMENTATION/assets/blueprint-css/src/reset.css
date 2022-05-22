@@ -1,8 +1,8 @@
-/* -------------------------------------------------------------- 
-  
+/* --------------------------------------------------------------
+
    reset.css
    * Resets default browser CSS.
-   
+
 -------------------------------------------------------------- */
 
 html, body, div, span, object, iframe,
@@ -21,8 +21,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-body { 
-  line-height: 1.5; 
+body {
+  line-height: 1.5;
 }
 
 /* Tables still need 'cellspacing="0"' in the markup. */
@@ -34,5 +34,5 @@ table, td, th { vertical-align: middle; }
 blockquote:before, blockquote:after, q:before, q:after { content: ""; }
 blockquote, q { quotes: "" ""; }
 
-/* Remove annoying border on linked images. */
+/* Remove annoying border on linked image. */
 a img { border: none; }
