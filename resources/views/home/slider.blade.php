@@ -7,7 +7,7 @@
                     <ul class="slides-container">
                         @foreach($sliderdata as $rs)
                         <li>
-                                <img src="{{Storage::url($rs->image)}}/img/slider/2.jpg" alt="img" style="width:1024px; height: 683px">
+                                <img src="{{Storage::url($rs->image)}} "alt="img/slider/2.jpg" style="object-fit: cover; width:1024px; height: 683px">
                                 <div class="slider_caption">
                                     <h2>{{$rs->title}}</h2>
                                     <p>It is a long established fact that a reader will be distracted by the readable

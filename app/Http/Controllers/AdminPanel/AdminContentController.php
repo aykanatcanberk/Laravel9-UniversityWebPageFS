@@ -20,6 +20,9 @@ class AdminContentController extends Controller
     {
         //
         $data = Content::all();
+
+       // dd($data);
+
         return view('admin.content.index', [
             'data' => $data
         ]);

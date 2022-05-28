@@ -34,17 +34,17 @@
 
     <![endif]-->
 </head>
-@extends('layouts.adminwindow')
+
 
 @section('title','Content Image List')
-@section('content')
+
 <body class="dashboard dashboard_1">
 <div class="full_container">
     <div class="inner_container">
 
 
         <div id="content">
-            @include('admin.header')
+            
             <div class="midde_cont">
             @yield('content')
 
@@ -81,5 +81,5 @@
 <script src="{{asset('assets')}}/admin2/js/chart_custom_style1.js"></script>
 </body>
 </html>
-@endsection
+
 

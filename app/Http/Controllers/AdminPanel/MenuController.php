@@ -14,6 +14,7 @@ class MenuController extends Controller
     ];
     public static function getParentsTree($menu,$title)
     {
+        return $title;
         if($menu->parent_id==0)
         {
             return $title;

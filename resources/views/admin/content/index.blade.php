@@ -45,9 +45,8 @@
                                     <td>{{$rs->id}}</td>
                                     <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs->menu,$rs->menu->title)}}</td>
                                     <td>{{$rs->title}}</td>
-                                    <td>{{$rs->menu}}</td>
-                                    <td>{{$rs->news}}</td>
-                                    <td>{{$rs->announce}}</td>
+                                    <td>{{$rs->type}}</td>
+
                                     <td>
                                         @if($rs->image)
                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">

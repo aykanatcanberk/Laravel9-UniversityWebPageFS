@@ -9,7 +9,7 @@ class Menu extends Model
 {
     use HasFactory;
     #one To One
-    public function contents()
+    public function content()
     {
         return $this->hasOne(Content::class);
     }
