@@ -46,6 +46,9 @@ Route::get('/param/{id}/{number}', [HomeController::class, 'param'])->name('para
 //6 -Route with post
 Route::post('/save', [HomeController::class, 'save'])->name('save');
 
+Route::get('/content/{id}', [HomeController::class, 'content'])->name('content');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

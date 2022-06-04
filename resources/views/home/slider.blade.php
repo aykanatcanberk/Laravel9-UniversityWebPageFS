@@ -5,6 +5,7 @@
                 <!-- Start super slider -->
                 <div id="slides">
                     <ul class="slides-container">
+
                         @foreach($sliderdata as $rs)
                         <li>
                                 <img src="{{Storage::url($rs->image)}} "alt="img/slider/2.jpg" style="object-fit: cover; width:1024px; height: 683px">

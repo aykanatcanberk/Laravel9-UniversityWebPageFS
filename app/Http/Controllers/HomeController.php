@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata=Content::limit(4)->get();
+
         $setting=Setting::first();
         return view('home.index',
             [
@@ -19,9 +20,19 @@ class HomeController extends Controller
                 'sliderdata'=>$sliderdata
             ]);
     }
-    public function about()
+
+    public function content($id)
     {
 
+        $data=Content::find($id);
+        return view('home.content',
+            [
+                'data'=>$data
+            ]);
+    }
+
+    public function about()
+    {
         $setting=Setting::first();
         return view('home.about',
             [

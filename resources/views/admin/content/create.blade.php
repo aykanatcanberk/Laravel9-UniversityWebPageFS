@@ -75,13 +75,6 @@
                                     <input type="text" class="form-control" name="Content">
                                 </div>
                                 <div class="form-group-inner">
-                                    <label>News</label>
-                                    <input type="text" class="form-control" name="news">
-                                </div>
-                                <div class="form-group-inner">
-                                    <label>Announce</label>
-                                    <input type="text" class="form-control" name="announce">
-                                </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputFile">Image</label>

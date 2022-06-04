@@ -61,10 +61,7 @@ class AdminContentController extends Controller
         $data->description = $request->description;
         $data->detail = $request->detail;
         $data->type = $request->type;
-        $data->menu = $request->menu;
-        $data->news= $request->news;
         $data->image= $request->image;
-        $data->announce= $request->announce;
         $data->status = $request->status;
 
         if($request->file('image')){
@@ -125,10 +122,7 @@ class AdminContentController extends Controller
         $data->description = $request->description;
         $data->detail = $request->detail;
         $data->type = $request->type;
-        $data->menu = $request->menu;
-        $data->news= $request->news;
         $data->image= $request->image;
-        $data->announce= $request->announce;
         $data->status = $request->status;
 
 

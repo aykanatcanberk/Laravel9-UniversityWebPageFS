@@ -30,9 +30,6 @@
                                 <th style="width: 10px">Id</th>
                                 <th>Menu</th>
                                 <th>Title</th>
-                                <th>Menu</th>
-                                <th>News</th>
-                                <th>Announce</th>
                                 <th>Image</th>
                                 <th>Image Gallery</th>
                                 <th>Status</th>
@@ -45,7 +42,6 @@
                                     <td>{{$rs->id}}</td>
                                     <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs->menu,$rs->menu->title)}}</td>
                                     <td>{{$rs->title}}</td>
-                                    <td>{{$rs->type}}</td>
 
                                     <td>
                                         @if($rs->image)

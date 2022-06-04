@@ -72,15 +72,6 @@
                                 <label>Content</label>
                                 <input type="text" class="form-control" name="Content" value="{{$data->content}}">
                             </div>
-                            <div class="form-group-inner">
-                                <label>News</label>
-                                <input type="text" class="form-control" name="news" value="{{$data->news}}">
-                            </div>
-                            <div class="form-group-inner">
-                                <label>Announce</label>
-                                <input type="text" class="form-control" name="announce" value="{{$data->announce}}" >
-                            </div>
-
                             <div class="form-group">
                                 <label for="exampleInputFile">Image</label>
                                 <div class="input-group">
