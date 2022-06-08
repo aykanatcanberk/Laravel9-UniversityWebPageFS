@@ -10,8 +10,9 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@yield("title")</title>
     <meta charset="UTF-8">
+
+    <title>@yield("title")</title>
     <meta name="description" content="@yield("description")">
     <meta name="keywords" content="@yield("keywords")">
     <meta name="author" content="Canberk Aykanat">

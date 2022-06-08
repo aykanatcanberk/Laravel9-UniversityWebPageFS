@@ -17,10 +17,13 @@ class HomeController extends Controller
     }
     public function setting()
     {
+        //echo "setting"; exit();
 
         $data=Setting::first();
         if($data==null)
         {
+            //echo "Save Settings ";exit()    ;
+
             $data=new Setting();
             $data->title='Project Title';
             $data->save();
@@ -31,6 +34,7 @@ class HomeController extends Controller
     }
     public function settingUpdate(Request $request)
     {
+        //echo "Save Settings ";exit();
         $id=$request->input('id');
         $data=Setting::find($id);
         $data->title=$request->input('title');
@@ -53,7 +57,7 @@ class HomeController extends Controller
         $data->contact=$request->input('contact');
         $data->references=$request->input('references');
         if($request->file('icon')){
-            $data->icon=$request->file('icon')->store('image');
+            $data->icon=$request->file('icon')->store('images');
         }
         $data->status=$request->input('status');
         $data->save();
