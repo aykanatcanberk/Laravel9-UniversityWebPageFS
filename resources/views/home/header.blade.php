@@ -1,5 +1,5 @@
 <!-- SCROLL TOP BUTTON -->
-<a class="scrollToTop" href="#"></a>
+<a class="scrollToTop" href="{{route('home')}}"></a>
 <!-- END SCROLL TOP BUTTON -->
 
 <!--=========== BEGIN HEADER SECTION ================-->
@@ -19,7 +19,7 @@
                     </button>
                     <!-- LOGO -->
                     <!-- TEXT BASED LOGO -->
-                    <a class="navbar-brand" href="index.html">WpF <span>Degree</span></a>
+                    <a class="navbar-brand" href="{{route('home')}}">IBP <span>Üniversitesi</span></a>
                     <!-- IMG BASED LOGO  -->
                 <!-- <a class="navbar-brand" href="index.html"><img src="{{asset('assets')}}/img/logo.png" alt="logo"></a>  -->
 

@@ -41,16 +41,17 @@ class HomeController extends Controller
                 'images'=>$images
             ]);
     }
-    public function menucontent($id)
+    public function menucontents($id)
     {
 
-        // echo "content ",$id ;exit();
-        $images=DB::table('images')->where('content_id',$id)->get();
-        $data=Content::find($id);
-        return view('home.content',
+       //echo "menu content " ;exit();
+
+        $menu=Menu::find($id);
+        $contents=DB::table('contents')->where('content_id',$id)->get();
+        return view('home.menucontents',
             [
-                'data'=>$data,
-                'images'=>$images
+                'menu'=>$menu,
+                'contents'=>$contents
             ]);
     }
 

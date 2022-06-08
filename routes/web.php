@@ -50,6 +50,7 @@ Route::get('/content/{id}', [HomeController::class, 'content'])->name('content')
 Route::get('/menucontent/{id}/{slug}', [HomeController::class, 'menucontent'])->name('menucontent');
 
 
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
