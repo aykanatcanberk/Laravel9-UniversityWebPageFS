@@ -46,10 +46,7 @@
                                             </div>
                                         </div>
                                     </li>
-
-
                                 @endforeach
-
                             </ul>
                         </li>
                         <li><a href="course-archive.html">Course</a></li>
