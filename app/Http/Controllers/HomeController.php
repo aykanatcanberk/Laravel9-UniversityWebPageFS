@@ -3,19 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Menu;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function mainmenulist()
+    {
+        return Menu::where('parent_id','=',0)->with('children')->get();
+
+    }
     //
     public function index()
     {
+        $page='home';
         $sliderdata=Content::limit(4)->get();
-
         $setting=Setting::first();
         return view('home.index',
             [
+                'page'=>$page,
                 'setting'=>$setting,
                 'sliderdata'=>$sliderdata
             ]);
@@ -24,10 +32,25 @@ class HomeController extends Controller
     public function content($id)
     {
 
+      // echo "content ",$id ;exit();
+        $images=DB::table('images')->where('content_id',$id)->get();
         $data=Content::find($id);
         return view('home.content',
             [
-                'data'=>$data
+                'data'=>$data,
+                'images'=>$images
+            ]);
+    }
+    public function menucontent($id)
+    {
+
+        // echo "content ",$id ;exit();
+        $images=DB::table('images')->where('content_id',$id)->get();
+        $data=Content::find($id);
+        return view('home.content',
+            [
+                'data'=>$data,
+                'images'=>$images
             ]);
     }
 

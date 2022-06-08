@@ -4,7 +4,6 @@
 @section('title', 'University Webpage')
 
 
-
 @section('content')
 
     <!--=========== BEGIN ABOUT US SECTION ================-->

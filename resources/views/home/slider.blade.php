@@ -5,17 +5,16 @@
                 <!-- Start super slider -->
                 <div id="slides">
                     <ul class="slides-container">
-
                         @foreach($sliderdata as $rs)
-                        <li>
+                            <li>
                                 <img src="{{Storage::url($rs->image)}} "alt="img/slider/2.jpg" style="object-fit: cover; width:1024px; height: 683px">
                                 <div class="slider_caption">
                                     <h2>{{$rs->title}}</h2>
                                     <p>It is a long established fact that a reader will be distracted by the readable
                                         content of a page when looking at its layout.</p>
-                                    <a class="slider_btn" href="#">Know More</a>
+                                    <a href="{{route('content',['id'=>$rs->id])}}" class="slider_btn" href="#">Know More</a>
                                 </div>
-                        </li>
+                            </li>
                     @endforeach
                         <!-- Start single slider-->
                         <li>
@@ -40,7 +39,7 @@
                                     it has a more-or-less normal distribution of letters.Many desktop publishing
                                     packages and web page editors now use Lorem Ipsum as their default model text, and a
                                     search</p>
-                                <a class="slider_btn" href="#">Know More</a>
+                                <a  class="slider_btn" href="#">Know More</a>
                             </div>
                         </li>
                     </ul>
