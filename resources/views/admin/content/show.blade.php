@@ -45,9 +45,6 @@
                                     <th>Title</th>
                                     <th>Keywords</th>
                                     <th>Detail</th>
-                                    <th>Content</th>
-                                    <th>News</th>
-                                    <th>Announce</th>
                                     <th>Images</th>
                                     <th>Status</th>
                                     <th>Created Date</th>
@@ -61,9 +58,6 @@
                                     <td>{{$data->title}}</td>
                                     <td>{{$data->keywords}}</td>
                                     <td>{!!$data->detail !!}</td>
-                                    <td>{{$data->content}}</td>
-                                    <td>{{$data->news}}</td>
-                                    <td>{{$data->announce}}</td>
                                     <td>    @if($data->image)
                                             <img src="{{Storage::url($data->image)}}" style="height: 40px">
                                         @endif</td>

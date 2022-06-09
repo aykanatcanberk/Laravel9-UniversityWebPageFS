@@ -21,8 +21,10 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-8">
-                <div class="contact_form wow fadeInLeft" method="post">
-                    <form action="" class="contactform" method="post">
+                <div class="contact_form wow fadeInLeft" >
+                    <h1>{{Session::get(('info'))}}</h1>
+                    @include ('home.messages')
+                    <form action="{{route('storemessage')}}" class="contactform" method="post">
                         @csrf
                         <p class="comment-form-author">
                             <label for="author"><span class="required"></span></label>
