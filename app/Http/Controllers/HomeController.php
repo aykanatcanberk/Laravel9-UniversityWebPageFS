@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Stmt\Echo_;
 
 class HomeController extends Controller
 {
@@ -57,6 +58,7 @@ class HomeController extends Controller
 
     public function about()
     {
+        //echo "about";exit();
         $setting=Setting::first();
         return view('home.about',
             [
@@ -66,9 +68,10 @@ class HomeController extends Controller
 
     public function references()
     {
+        //echo "references";exit();
 
         $setting=Setting::first();
-        return view('home.index',
+        return view('home.references',
             [
                 'setting'=>$setting,
             ]);
@@ -76,9 +79,10 @@ class HomeController extends Controller
 
     public function contact()
     {
+        //echo "contact";exit();
 
         $setting=Setting::first();
-        return view('home.about',
+        return view('home.contact',
             [
                 'setting'=>$setting,
             ]);
