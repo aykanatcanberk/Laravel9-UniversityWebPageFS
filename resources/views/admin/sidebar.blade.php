@@ -34,7 +34,7 @@
             <li><a href="/admin/menu"><i class="fa fa-clock-o orange_color"></i> <span>Menus</span></a></li>
             <li><a href="/admin/content"><i class="fa fa-diamond purple_color"></i> <span>Content</span></a></li>
             <li><a href="/admin/comment"><i class="fa fa-clone yellow_color"></i> <span>Comment</span></a></li>
-            <li><a href="/admin/faq"><i class="fa fa-clock-o orange_color"></i> <span>FAQ</span></a></li>
+            <li><a href="{{route('admin.faq.index')}}"><i class="fa fa-clock-o orange_color"></i> <span>FAQ</span></a></li>
             <li><a href="{{route('admin.message.index')}}" ><i class="fa fa-paper-plane red_color"></i> <span>Messages</span></a></li>
             <li><a href="/admin/user"><i class="fa fa-clock-o orange_color"></i> <span>Users</span></a></li>
 

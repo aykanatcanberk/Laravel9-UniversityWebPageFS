@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminContentController;
+use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
@@ -36,7 +37,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
-
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 
 
 
@@ -53,7 +54,6 @@ Route::get('/content/{id}', [HomeController::class, 'content'])->name('content')
 Route::get('/menucontent/{id}/{slug}', [HomeController::class, 'menucontent'])->name('menucontent');
 
 
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -63,9 +63,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
 
     //***General routes ROUTES
-Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
+    Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
     Route::post('/setting', [AdminHomeController::class, 'settingUpdate'])->name('setting.update');
-
 
 
 //***Admin Menu routes
@@ -106,6 +105,17 @@ Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting')
         Route::get('/show/{id}', 'show')->name('show');
 
     });
+    //*** Admin FAQ  routes
+    Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+    });
+
 });
 
 
