@@ -59,6 +59,21 @@
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
 
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                @auth()
+                                    <li><a href="404.html">{{Auth::user()->name}}</a></li>
+                                @endauth
+                                @guest()
+                                    <li><a href="/loginuser">Log in</a></li>
+                                    <li><a href="/registeruser">Join</a></li>
+                                @endguest
+                                <li><a href="/logoutuser">Log Out</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

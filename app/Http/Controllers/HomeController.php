@@ -8,6 +8,7 @@ use App\Models\Menu;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -146,6 +147,16 @@ class HomeController extends Controller
                 'lname'=>$_REQUEST["lname"]
 
             ]);*/
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+
+
+
     }
 
 

@@ -38,8 +38,9 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
-
-
+Route::view('/loginuser','home.login');
+Route::view('/registeruser','home.register');
+Route::get('/logoutuser',[HomeController::class, 'logout'])->name('logoutuser');
 
 //4- Route controller view
 Route::get('/test', [HomeController::class, 'test'])->name('test');
