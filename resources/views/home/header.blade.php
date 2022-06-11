@@ -64,7 +64,7 @@
                                aria-expanded="false">Account<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 @auth()
-                                    <li><a href="404.html">{{Auth::user()->name}}</a></li>
+                                    <li><a href="{{route('userpanel.index')}}">{{Auth::user()->name}}</a></li>
                                 @endauth
                                 @guest()
                                     <li><a href="/loginuser">Log in</a></li>
