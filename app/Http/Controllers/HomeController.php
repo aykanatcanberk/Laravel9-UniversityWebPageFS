@@ -24,12 +24,14 @@ class HomeController extends Controller
     {
         $page='home';
         $sliderdata=Content::limit(4)->get();
+        $contentlist1=Content::limit(7)->get();
         $setting=Setting::first();
         return view('home.index',
             [
                 'page'=>$page,
                 'setting'=>$setting,
-                'sliderdata'=>$sliderdata
+                'sliderdata'=>$sliderdata,
+                'contentlist1'=>$contentlist1
             ]);
     }
 

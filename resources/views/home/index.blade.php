@@ -1,4 +1,3 @@
-
 @extends('layouts.frontbase')
 
 @section('title', $setting->title)
@@ -17,14 +16,20 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="aboutus_area wow fadeInLeft">
                         <h2 class="titile">About Us</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="newsfeed_area wow fadeInRight">
                         <ul class="nav nav-tabs feed_tabs" id="myTab2">
                             <li class="active"><a href="#news" data-toggle="tab">News</a></li>
-                            <li><a href="#notice" data-toggle="tab">Notice</a></li>
+                            <li><a href="#notice" data-toggle="tab">Contents</a></li>
                             <li><a href="#events" data-toggle="tab">Events</a></li>
                         </ul>
 
@@ -37,7 +42,8 @@
                                         <div class="media">
                                             <div class="media-left">
                                                 <a class="news_img" href="#">
-                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg"
+                                                         alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -50,7 +56,8 @@
                                         <div class="media">
                                             <div class="media-left">
                                                 <a class="news_img" href="#">
-                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg"
+                                                         alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -63,7 +70,8 @@
                                         <div class="media">
                                             <div class="media-left">
                                                 <a class="news_img" href="#">
-                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg"
+                                                         alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -78,88 +86,26 @@
                             <!-- Start notice tab content -->
                             <div class="tab-pane fade " id="notice">
                                 <div class="single_notice_pane">
+                                    @foreach($contentlist1 as $rs)
                                     <ul class="news_tab">
                                         <li>
                                             <div class="media">
                                                 <div class="media-left">
                                                     <a class="news_img" href="#">
-                                                        <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                        <img class="media-object" src="{{Storage::url($rs->image)}}"
+                                                             alt="img">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
-                                                    <a href="#">Dummy text of the printing and typesetting industry</a>
+                                                    <a href="#">{{$rs->title}}</a>
                                                     <span class="feed_date">27.02.15</span>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a class="news_img" href="#">
-                                                        <img class="media-object" src="{{asset('assets')}}/img/notice.jpg" alt="img">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#">Dummy text of the printing and typesetting industry</a>
-                                                    <span class="feed_date">28.02.15</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a class="news_img" href="#">
-                                                        <img class="media-object" src="{{asset('assets')}}/img/notice.jpg" alt="img">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#">Dummy text of the printing and typesetting industry</a>
-                                                    <span class="feed_date">28.02.15</span>
-                                                </div>
-                                            </div>
-                                        </li>
+
+
                                     </ul>
-                                    <ul class="news_tab">
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a class="news_img" href="#">
-                                                        <img class="media-object" src="{{asset('assets')}}/img/notice.jpg" alt="img">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a>
-                                                    <span class="feed_date">27.02.15</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a class="news_img" href="#">
-                                                        <img class="media-object" src="{{asset('assets')}}/img/notice.jpg" alt="img">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#">Dummy text of the printing and typesetting industry</a>
-                                                    <span class="feed_date">28.02.15</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a class="news_img" href="#">
-                                                        <img class="media-object" src="{{asset('assets')}}/img/notice.jpg" alt="img">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a>
-                                                    <span class="feed_date">28.02.15</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    @endforeach
                                 </div>
                             </div>
                             <!-- Start events tab content -->
@@ -169,7 +115,8 @@
                                         <div class="media">
                                             <div class="media-left">
                                                 <a class="news_img" href="#">
-                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg"
+                                                         alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -182,7 +129,8 @@
                                         <div class="media">
                                             <div class="media-left">
                                                 <a class="news_img" href="#">
-                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg"
+                                                         alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -195,7 +143,8 @@
                                         <div class="media">
                                             <div class="media-left">
                                                 <a class="news_img" href="#">
-                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg" alt="img">
+                                                    <img class="media-object" src="{{asset('assets')}}/img/news.jpg"
+                                                         alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -240,7 +189,8 @@
                                         <span class="fa fa-desktop"></span>
                                     </div>
                                     <h3>Technology</h3>
-                                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                    <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                        specimen book</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -249,7 +199,8 @@
                                         <span class="fa fa-users"></span>
                                     </div>
                                     <h3>Best Tutor</h3>
-                                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                    <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                        specimen book</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -258,7 +209,8 @@
                                         <span class="fa fa-flask"></span>
                                     </div>
                                     <h3>Practical Training</h3>
-                                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                    <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                        specimen book</p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -267,7 +219,8 @@
                                         <span class="fa fa-support"></span>
                                     </div>
                                     <h3>Support</h3>
-                                    <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                    <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                        specimen book</p>
                                 </div>
                             </div>
                         </div>
@@ -288,28 +241,36 @@
                             <!-- START SINGLE SKILL-->
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="single_skill wow fadeInUp">
-                                    <div id="myStat" data-dimension="150" data-text="35%" data-info="" data-width="10" data-fontsize="25" data-percent="35" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                                    <div id="myStat" data-dimension="150" data-text="35%" data-info="" data-width="10"
+                                         data-fontsize="25" data-percent="35" data-fgcolor="#999" data-bgcolor="#fff"
+                                         data-icon="fa-task"></div>
                                     <h4>Repeate Learners</h4>
                                 </div>
                             </div>
                             <!-- START SINGLE SKILL-->
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="single_skill wow fadeInUp">
-                                    <div id="myStathalf2" data-dimension="150" data-text="90%" data-info="" data-width="10" data-fontsize="25" data-percent="90" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                                    <div id="myStathalf2" data-dimension="150" data-text="90%" data-info=""
+                                         data-width="10" data-fontsize="25" data-percent="90" data-fgcolor="#999"
+                                         data-bgcolor="#fff" data-icon="fa-task"></div>
                                     <h4>Success Rate</h4>
                                 </div>
                             </div>
                             <!-- START SINGLE SKILL-->
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="single_skill wow fadeInUp">
-                                    <div id="myStat2" data-dimension="150" data-text="100%" data-info="" data-width="10" data-fontsize="25" data-percent="100" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                                    <div id="myStat2" data-dimension="150" data-text="100%" data-info="" data-width="10"
+                                         data-fontsize="25" data-percent="100" data-fgcolor="#999" data-bgcolor="#fff"
+                                         data-icon="fa-task"></div>
                                     <h4>Student Engagement</h4>
                                 </div>
                             </div>
                             <!-- START SINGLE SKILL-->
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="single_skill wow fadeInUp">
-                                    <div id="myStat3" data-dimension="150" data-text="65%" data-info="" data-width="10" data-fontsize="25" data-percent="65" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                                    <div id="myStat3" data-dimension="150" data-text="65%" data-info="" data-width="10"
+                                         data-fontsize="25" data-percent="65" data-fgcolor="#999" data-bgcolor="#fff"
+                                         data-icon="fa-task"></div>
                                     <h4>Certified Courses</h4>
                                 </div>
                             </div>
@@ -343,7 +304,7 @@
                             <li>
                                 <div class="single_course">
                                     <div class="singCourse_imgarea">
-                                        <img src="{{asset('assets')}}/img/course-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-1.jpg"/>
                                         <div class="mask">
                                             <a href="#" class="course_more">View Course</a>
                                         </div>
@@ -351,7 +312,8 @@
                                     <div class="singCourse_content">
                                         <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
                                         <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <div class="singCourse_author">
                                         <img src="{{asset('assets')}}/img/author.jpg" alt="img">
@@ -362,7 +324,7 @@
                             <li>
                                 <div class="single_course">
                                     <div class="singCourse_imgarea">
-                                        <img src="{{asset('assets')}}/img/course-2.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-2.jpg"/>
                                         <div class="mask">
                                             <a href="#" class="course_more">View Course</a>
                                         </div>
@@ -370,7 +332,8 @@
                                     <div class="singCourse_content">
                                         <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
                                         <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <div class="singCourse_author">
                                         <img src="{{asset('assets')}}/img/author.jpg" alt="img">
@@ -381,7 +344,7 @@
                             <li>
                                 <div class="single_course">
                                     <div class="singCourse_imgarea">
-                                        <img src="{{asset('assets')}}/img/course-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-1.jpg"/>
                                         <div class="mask">
                                             <a href="#" class="course_more">View Course</a>
                                         </div>
@@ -389,7 +352,8 @@
                                     <div class="singCourse_content">
                                         <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
                                         <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <div class="singCourse_author">
                                         <img src="{{asset('assets')}}/img/author.jpg" alt="img">
@@ -400,7 +364,7 @@
                             <li>
                                 <div class="single_course">
                                     <div class="singCourse_imgarea">
-                                        <img src="{{asset('assets')}}/img/course-2.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-2.jpg"/>
                                         <div class="mask">
                                             <a href="#" class="course_more">View Course</a>
                                         </div>
@@ -408,7 +372,8 @@
                                     <div class="singCourse_content">
                                         <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
                                         <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <div class="singCourse_author">
                                         <img src="{{asset('assets')}}/img/author.jpg" alt="img">
@@ -419,7 +384,7 @@
                             <li>
                                 <div class="single_course">
                                     <div class="singCourse_imgarea">
-                                        <img src="{{asset('assets')}}/img/course-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-1.jpg"/>
                                         <div class="mask">
                                             <a href="#" class="course_more">View Course</a>
                                         </div>
@@ -427,7 +392,8 @@
                                     <div class="singCourse_content">
                                         <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
                                         <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <div class="singCourse_author">
                                         <img src="{{asset('assets')}}/img/author.jpg" alt="img">
@@ -438,7 +404,7 @@
                             <li>
                                 <div class="single_course">
                                     <div class="singCourse_imgarea">
-                                        <img src="{{asset('assets')}}/img/course-2.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-2.jpg"/>
                                         <div class="mask">
                                             <a href="#" class="course_more">View Course</a>
                                         </div>
@@ -446,7 +412,8 @@
                                     <div class="singCourse_content">
                                         <h3 class="singCourse_title"><a href="#">Introduction To Matrix</a></h3>
                                         <p class="singCourse_price"><span>$20</span> Per One Month</p>
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <div class="singCourse_author">
                                         <img src="{{asset('assets')}}/img/author.jpg" alt="img">
@@ -486,7 +453,7 @@
                             <li>
                                 <div class="single_tutors">
                                     <div class="tutors_thumb">
-                                        <img src="{{asset('assets')}}/img/author.jpg" />
+                                        <img src="{{asset('assets')}}/img/author.jpg"/>
                                     </div>
                                     <div class="singTutors_content">
                                         <h3 class="tutors_name">Jame Burns</h3>
@@ -506,7 +473,7 @@
                             <li>
                                 <div class="single_tutors">
                                     <div class="tutors_thumb">
-                                        <img src="{{asset('assets')}}/img/course-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-1.jpg"/>
                                     </div>
                                     <div class="singTutors_content">
                                         <h3 class="tutors_name">Jame Burns</h3>
@@ -526,7 +493,7 @@
                             <li>
                                 <div class="single_tutors">
                                     <div class="tutors_thumb">
-                                        <img src="{{asset('assets')}}/img/author.jpg" />
+                                        <img src="{{asset('assets')}}/img/author.jpg"/>
                                     </div>
                                     <div class="singTutors_content">
                                         <h3 class="tutors_name">Jame Burns</h3>
@@ -546,7 +513,7 @@
                             <li>
                                 <div class="single_tutors">
                                     <div class="tutors_thumb">
-                                        <img src="{{asset('assets')}}/img/course-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-1.jpg"/>
                                     </div>
                                     <div class="singTutors_content">
                                         <h3 class="tutors_name">Jame Burns</h3>
@@ -566,7 +533,7 @@
                             <li>
                                 <div class="single_tutors">
                                     <div class="tutors_thumb">
-                                        <img src="{{asset('assets')}}/img/author.jpg" />
+                                        <img src="{{asset('assets')}}/img/author.jpg"/>
                                     </div>
                                     <div class="singTutors_content">
                                         <h3 class="tutors_name">Jame Burns</h3>
@@ -586,7 +553,7 @@
                             <li>
                                 <div class="single_tutors">
                                     <div class="tutors_thumb">
-                                        <img src="{{asset('assets')}}/img/course-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/course-1.jpg"/>
                                     </div>
                                     <div class="singTutors_content">
                                         <h3 class="tutors_name">Jame Burns</h3>
@@ -635,7 +602,8 @@
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="single_stsTestimonial wow fadeInUp">
                                     <div class="stsTestimonial_msgbox">
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <img class="stsTesti_img" src="{{asset('assets')}}/img/author.jpg" alt="img">
                                     <div class="stsTestimonial_content">
@@ -650,7 +618,8 @@
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="single_stsTestimonial wow fadeInUp">
                                     <div class="stsTestimonial_msgbox">
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book.scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book.scrambled it to make a type specimen book</p>
                                     </div>
                                     <img class="stsTesti_img" src="{{asset('assets')}}/img/author.jpg" alt="img">
                                     <div class="stsTestimonial_content">
@@ -665,7 +634,8 @@
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="single_stsTestimonial wow fadeInUp">
                                     <div class="stsTestimonial_msgbox">
-                                        <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                                        <p>when an unknown printer took a galley of type and scrambled it to make a type
+                                            specimen book</p>
                                     </div>
                                     <img class="stsTesti_img" src="{{asset('assets')}}/img/author.jpg" alt="img">
                                     <div class="stsTestimonial_content">
