@@ -7,7 +7,7 @@
             </ul>
             <hr>
         @else
-            <li><a href="{{route('menucontent',['id'=>$submenu->id, 'slug'=>$submenu->title])}}">{{$submenu->title}}</a></li>
+            <li><a href="{{route('menucontents',['id'=>$submenu->id, 'slug'=>$submenu->title])}}">{{$submenu->title}}</a></li>
         @endif
     </ul>
 @endforeach

@@ -24,13 +24,12 @@
                 <!-- <a class="navbar-brand" href="index.html"><img src="{{asset('assets')}}/img/logo.png" alt="logo"></a>  -->
 
                 </div>
-                <div id="navbar" class="navbar-collapse collapse" @if(!@isset($page))@endif>
-                    @php
-                        $mainMenus=\App\Http\Controllers\HomeController::mainmenulist()
-                    @endphp
-                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
 
-                        <li><a class="{{route('about')}}">Home</a></li>
+                @php
+                    $mainMenus=\App\Http\Controllers\HomeController::mainmenulist()
+                @endphp
+                <div id="navbar" class="navbar-collapse collapse" @if(!@isset($page))@endif>
+                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">Menu<span class="caret"></span></a>
@@ -59,7 +58,7 @@
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
 
-                        <li class="dropdown">
+                        <li class="dropdown @if(!@isset($page)) show-on-click @endif">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">Account<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">

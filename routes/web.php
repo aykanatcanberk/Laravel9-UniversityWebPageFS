@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminContentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
+use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
@@ -40,6 +41,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 Route::view('/loginuser', 'home.login')->name('loginuser');
 Route::view('/registeruser', 'home.register')->name('registeruser');
 Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
@@ -57,7 +59,7 @@ Route::get('/param/{id}/{number}', [HomeController::class, 'param'])->name('para
 Route::post('/save', [HomeController::class, 'save'])->name('save');
 
 Route::get('/content/{id}', [HomeController::class, 'content'])->name('content');
-Route::get('/menucontent/{id}/{slug}', [HomeController::class, 'menucontent'])->name('menucontent');
+Route::get('/menucontents/{id}/{slug}', [HomeController::class, 'menucontents'])->name('menucontents');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -119,7 +121,7 @@ Route::middleware('auth')->group(function () {
         //***Admin messages routes
         Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function () {
             Route::get('/', 'index')->name('index');
-            Route::post('/update/', 'update')->name('update');
+            Route::post('/update/{id}', 'update')->name('update');
             Route::get('/destroy/{id}', 'destroy')->name('destroy');
             Route::get('/show/{id}', 'show')->name('show');
 
@@ -134,6 +136,16 @@ Route::middleware('auth')->group(function () {
             Route::get('/show/{id}', 'show')->name('show');
             Route::get('/destroy/{id}', 'destroy')->name('destroy');
         });
+
+        //***Admin comment routes
+        Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/destroy/{id}', 'destroy')->name('destroy');
+            Route::get('/show/{id}', 'show')->name('show');
+
+        });
+
 
         //***Admin User routes
         Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function () {

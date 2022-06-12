@@ -46,7 +46,7 @@
 
                                 <tr>
                                     <th>Menu</th>
-                                    <td>{{$data->menu}}</td>
+                                    <td>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($data->menu,$data->menu->title ) }}</td>
                                 </tr>
 
                                 <tr>

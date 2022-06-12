@@ -15,4 +15,9 @@ class Content extends Model
 
         return $this->belongsTo(Menu::class);
     }
+    public function reviews()
+    {
+
+        return $this->hasMany(Comment::class);
+    }
 }

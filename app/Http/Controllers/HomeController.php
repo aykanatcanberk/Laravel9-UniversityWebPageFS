@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Content;
 use App\Models\Faq;
 use App\Models\Menu;
@@ -41,10 +42,12 @@ class HomeController extends Controller
       // echo "content ",$id ;exit();
         $images=DB::table('images')->where('content_id',$id)->get();
         $data=Content::find($id);
+        $reviews=Comment::where('content_id',$id)->where('status','True')->get();
         return view('home.content',
             [
                 'data'=>$data,
-                'images'=>$images
+                'images'=>$images,
+                'reviews'=>$reviews
             ]);
     }
     public function menucontents($id)
@@ -117,6 +120,21 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->route('contact')->with('info','Your messsage has been sent,Thank you.');
+
+    }
+    public function storecomment(Request $request)
+    {
+        //dd($request);
+        $data=new Comment();
+        $data->user_id=$request= Auth::id();
+        $data->content_id=$request->input('content_id');
+        $data->subject=$request->input('subject');
+        $data->review=$request->input('review');
+        $data->rate=$request->input('rate');
+        $data->ip=request()->ip();
+        $data->save();
+
+        return redirect()->route('content',['id'=>$request->input('content_id')])->with('info','Your comment has been sent,Thank you.');
 
     }
 

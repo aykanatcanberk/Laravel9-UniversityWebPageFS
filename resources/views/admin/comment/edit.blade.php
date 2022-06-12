@@ -40,7 +40,7 @@
                                     @foreach($datalist as $rs)
                                         <option
                                             value="{{$rs->id}}"
-                                            @if($rs->id==$data->menu_id) selected="selected" @endif >{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title ) }}</option>
+                                            @if($rs->id==$data->menu_id) selected="selected" @endif >{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title) }}</option>
                                     @endforeach
                                 </select>
                             </div>
