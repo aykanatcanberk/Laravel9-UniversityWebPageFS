@@ -67,9 +67,12 @@
                                 @endauth
                                 @guest()
                                     <li><a href="/loginuser">Log in</a></li>
+
                                     <li><a href="/registeruser">Join</a></li>
                                 @endguest
                                 <li><a href="/logoutuser">Log Out</a></li>
+                                <li><a href="{{route('userpanel.reviews')}}">Reviews</a></li>
+
                             </ul>
                         </li>
 
